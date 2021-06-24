@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  Task 2. Lesson 3
+//  Lesson 4. Task 3
 //
-//  Created by Александра  Значёнок on 20.06.21.
+//  Created by Александра  Значёнок on 22.06.21.
 //
 
 import UIKit
@@ -12,120 +12,105 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // Task 1
+        
+       
+            var tuple1 = (name:"Alex", age: 23, sallary: 1000.0)
+            var tuple2 = (name:"Vova", age: 35, sallary: 1500.0)
+            var tuple3 = (name:"Ivan", age: 78, sallary: 700.50)
+        
+        
+        func augmentSallary(name: String, age: Int, sallary: Float) {
+            
+            switch tuple1.age {
+               case 18...30:
+                augmentSallary(name: "Alex", age: 23, sallary: 1000.0 * 1.5)
+               default:
+                augmentSallary(name: "Alex", age: 23, sallary: 1000.0 * 3)
 
-        
-        
-        let myParametr = (push: 60, pull: 10, squat: 100)
-            
-        print(myParametr)
-        
-        print(myParametr.push)
-        print(myParametr.pull)
-        print(myParametr.squat)
-        
-        
-        let friendParametr = (myParametr.push / 3, myParametr.pull * 2, myParametr.squat + 50)
-            print(friendParametr)
-        
-    
-        
-        let difference = (myParametr.push - myParametr.push / 3, myParametr.pull - myParametr.pull * 2, myParametr.squat - myParametr.squat + 50)
-        print(difference)
-        
-        
-        let a: Int = 13
-        let b: Double = 15.5
-        let c: String = "7Sasha7"
-        let d: Int = 13
-        let e: String = "cat4"
-        
-        let aInt = Int(a) ?? 0
-        let bInt = Int(b) ?? 0
-        let cInt = Int(c) ?? 0
-        let dInt = Int(d) ?? 0
-        let eInt = Int(e) ?? 0
+            switch tuple2.age {
+               case 31...34:
+                augmentSallary(name: "Vova", age: 35, sallary: 1500.0 * 2)
+               default:
+                augmentSallary(name: "Vova", age: 35, sallary: 1500.0 * 3)
 
-       let sumInt = aInt + bInt + cInt + dInt + eInt
-        print(sumInt)
-
+            switch tuple3.age {
+                case 50...60:
+                    augmentSallary(name: "Ivan", age: 78, sallary: 700.50 / 5)
+                default:
+                    augmentSallary(name: "Ivan", age: 78, sallary: 700.50 * 3)
+                    
+            }
+                
+               
+                    
+               // вроде сделала проверку, создала функцию, но принт, почему то ничего не выводит, как вывести в принт 3 разных значения? я пробовала по разному, ничего не выводит
+//                    print(augmentSallary(name: "Alex", age: 23, sallary: 1000.0))
+//                    print(augmentSallary(name: "Vova", age: 35, sallary: 1500.0))
+//                    print(augmentSallary(name: "Ivan", age: 78, sallary: 700.50))
+                    
         
-        let text: (code: Int?, message: String?, errorMessage: String?) = (Int.random(in: 200..<300), "Message", "errorMessage")
-        
-        if text.code == Int.random(in: 200..<300) {
-            print(text.message!)
-        } else {
-            print(text.errorMessage!)
-            
-            var text1: (code: Int?, message: String?, errorMessage: String?) = (nil, "Message", "errorMessage")
-            if text1.code == 13 {
-                print(text1.code)
-            } else {
-                print(text1.errorMessage!)
-            
-            
-            
-            
-                var Tuple: (String, Bool, Int, Bool, Int)
-                
-                var Tuple1: (String?, Bool, Int, Bool, Int?)
-                
-                var Tuple2: (String?, Bool, Int, Bool, Int?)
-                
-                var Tuple3: (String?, Bool, Int, Bool, Int?)
-                
-                var Tuple4: (String?, Bool, Int, Bool, Int?)
-                
-                    
-                    //  вообще никак не могу разобраться со способами проверки на nil
-                
-                    
-                let warm: (a:Int?, b:Int?, c:Int?, d:Int?, e:Int?) = (13, nil, 35, nil, nil)
-                    
-                var sumWarm = warm.a! + warm.c!
-                
-                if warm.b != nil {
-                    sumWarm += warm.b!
+//                    это тоже не выводит(совершенно пустая консоль)
+//
+//                    print(tuple1)
+//                    print(tuple2)
+//                    print(tuple3)
                 }
-                if warm.d != nil {
-                    sumWarm += warm.d!
-                    
-                if warm.e != nil {
-                        sumWarm += warm.e!
-                    
-                print("sumWarm - \(sumWarm)")
                 
+            // Task 2
+            
+        
+                let a: Int = 13
+                let b: Int = 24
+                let c: Int = 66
+                
+                func sumNumber() {
+                    let  sum = (a + b + c) / 3
+                    print(sum)
+                    }
+                sumNumber()
+                
+                // вроде сейчас правильно создала и вызвала фунцкцию, но консоль совершенно пустая
+                
+            
+            // Task 3
+            
+            
+            
+                var n: Int = 5000
+                var y: Int = 3
+                var p: Int = 12
+              
+                func creditSum() {
+                    var m: Int = (n * p * ((1 + p) * y) / (12 * ((1 + p) * y) - 1))
+                    var s: Int = (m * 12) * y
                     
-       // не выводит в консоль сумму почему то
-                                    
-                                    
+                    creditSum()
                     
-                    
-                    
-                    
-                                    
-                                    
-                                }
-                            }
-                        }
-                        
-
-
+                    print("Сумма кредита - \(n)")
+                    print("Период - \(y)")
+                    print("Процент - \(p)")
+                    print("Ежемесячно - \(m)")
+                    print("Общая сумма - \(s)")
+                }
+            
+            // не могу проверить правильно ли сделала, ничего не выводит в консоль, она по прежнему пустая просто(наверное где то с самого начала неправильно сделала)
+            
+            
+            
+        }
         
+       
         
+       
         
-        
-
-        
-        
-        
-
-    }
-        
+            
         
     
 
 
- 
-    }
+}
 
     }
+}
